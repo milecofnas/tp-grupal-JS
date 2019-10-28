@@ -51,7 +51,7 @@ let codigoIngresado = codigoDescuento == respuesta1 && prompt("Ingrese el códig
 
 let codigoRespuesta = (codigoIngresado == "BestTienda123OK" /*como hago para ingresar otro valor aca */) && 
 confirm("El código ingresado es CORRECTO. Usted tiene un 25% de descuento en el total de su compra") || 
-codigoIngresado !== "BestTienda123OK" && confirm("Lo sentimos, el código ingresado es INCORRECTO")
+codigoIngresado != "BestTienda123OK" && confirm("Lo sentimos, el código ingresado es INCORRECTO")
 
 let detalleConDescuento = (codigoIngresado == "BestTienda123OK") && confirm(`El detalle de tu compra es: 
 
@@ -60,7 +60,7 @@ ${producto2}: ${cantidadProducto2} x $${precioProducto2}
 
 TOTAL DE TU COMPRA: $${total - (total * 0.25)}
 
-CUOTAS A ABONAR POR MES: $${total - (total * 0.25) / cuotasTarjeta}`)
+CUOTAS A ABONAR POR MES: $${(total - (total * 0.25)) / cuotasTarjeta}`)
 
 let detalleSinDescuento = (codigoIngresado != "BestTienda123OK") && confirm(`El detalle de tu compra es: 
 
@@ -71,7 +71,8 @@ TOTAL DE TU COMPRA: $${total}
 
 CUOTAS A ABONAR POR MES: $${total / cuotasTarjeta}`)
 
-let saludoFinal = confirm("¡Gracias por su visita! Les esperamos pronto nuevamente")
+let saludoFinal = confirm(`¡Gracias por su visita!
+${"Les esperamos pronto nuevamente"}`)
 
 
 
